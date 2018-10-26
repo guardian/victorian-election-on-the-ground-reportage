@@ -1,0 +1,134 @@
+@import "mq";
+
+aside, footer {
+	display: block;
+}
+
+.inline-icon {
+	fill: #ffffff;
+}
+.inline-icon svg {
+	overflow: visible;
+}
+.content--pillar-news:not(.paid-content) .interactive-pullquote p {
+	color: #ab0613;
+}
+.content--pillar-news:not(.paid-content) .pullquote-cite {
+	color: #c70000;
+}
+.content--pillar-news:not(.paid-content) .inline-garnett-quote svg {
+	fill: #c70000;
+}
+.content--type-article .interactive-pullquote {
+	background-color: #f6f6f6;
+	position: relative;
+	clear: none;
+	float: none;
+	width: inherit;
+}
+
+.content--type-article .interactive-pullquote:after {
+	content: '';
+	width: 1.5625rem;
+	height: 1.5625rem;
+	border-radius: 0 0 1.5625rem;
+	position: absolute;
+	bottom: -1.5625rem;
+	left: 0.625rem;
+	background-color: #f6f6f6;
+}
+.content--type-article .interactive-pullquote .pullquote-cite, .content--type-article .interactive-pullquote .pullquote-paragraph {
+	display: inline;
+}
+.content--type-article .interactive-pullquote blockquote {
+	display: inline;
+}
+.content--type-article .interactive-pullquote .inline-garnett-quote {
+	margin-right: 0.9375rem;
+	width: 1.25rem;
+}
+.content--type-article .interactive-pullquote .inline-garnett-quote svg {
+	width: 0.75rem;
+	height: auto;
+	position: relative;
+	top: -0.5rem;
+}
+
+.content--type-article .interactive-pullquote.element--supporting .pullquote-cite, .content--type-article .interactive-pullquote.element--supporting .pullquote-paragraph {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	font-family: "Guardian Egyptian Web", Georgia, serif;
+	font-weight: lighter;
+}
+.content--type-article .interactive-pullquote.element--supporting .inline-garnett-quote {
+	margin-right: 0.625rem;
+}
+.content--type-article .interactive-pullquote.element--supporting .inline-garnett-quote svg {
+	height: 0.5rem;
+	top: -0.4375rem;
+}
+.content--type-article .interactive-pullquote.element--supporting .pullquote-cite, .content--type-article .interactive-pullquote.element--supporting .pullquote-paragraph {
+	font-weight: 400;
+}
+.from-content-api blockquote {
+	font-style: italic;
+	margin: 1rem 0 1.75rem 1.5rem;
+}
+
+.from-content-api cite {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-family: "Guardian Text Egyptian Web", Georgia, serif;
+}
+
+.interactive-pullquote {
+	width: 100%;
+	max-width: 200px;
+	box-sizing: border-box;
+	padding: 0;
+	float: left;
+	margin-bottom: 0.75rem;
+	padding: 10px;
+
+    @include mq($from: tablet, $until: desktop) {
+        display: none;
+    }
+
+
+    @include mq($from: desktop, $until: leftCol) {
+        margin-left: -220px;
+    }
+
+    @include mq($from: leftCol) {
+       margin-left: -250px;
+    }
+
+}
+
+.interactive-pullquote svg {
+	fill: #ed7f11;
+	width: 20px;
+}
+
+.interactive-pullquote blockquote p {
+	font-size: 1.5rem;
+	line-height: 1.75rem;
+	font-family: "Guardian Egyptian Web", Georgia, serif;
+	font-weight: normal;
+	color: #767676;
+	margin-bottom: 0;
+}
+
+.interactive-pullquote footer {
+	margin-top: 0.0625rem;
+}
+.interactive-pullquote cite {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	font-family: "Guardian Text Egyptian Web", Georgia, serif;
+	font-weight: bold;
+	font-style: normal;
+	color: #767676;
+}
+
+

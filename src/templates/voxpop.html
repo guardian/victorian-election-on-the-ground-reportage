@@ -1,0 +1,83 @@
+<div class="voxbox_wrapper">
+
+	<h2 id="voxbox_headline">{{settings.title}}</h2>
+
+	<div id="voxbox_intro">{{settings.standfirst}}</div>
+
+	<div id="target">
+		
+		<div class="headshot_block_container">
+
+			{{#each responses.months}}
+
+				<div class="monthHeading">{{this.key}}</div>
+
+				<div class="headshot_block_container">
+
+					{{#each values}}
+
+					<div class="headshot_block">
+
+						<div class="headshot {{mood}}" on-click="['activate', index, @index]" {{#if content}}style="background-color:black"{{/if}} ></div>
+
+					</div>
+
+					{{/each}}
+
+				</div>
+
+				{{#each values}}
+
+					{{#if content}}
+
+					<div class="arrow__container">
+
+						<div class="arrow__block" style=" margin-left: calc(100% / 5 * {{@index}});">
+							
+							<div class="arrow__box">
+								<div id="triangle-up"></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="content">
+
+						<div class="profile_pic">
+							<img src={{pic}}>
+						</div>
+
+						<div class="user_bio">
+							<p>
+								<strong>
+									<span class="name-age">{{name}}, {{age}}</span><br/>
+									{{job}}, {{suburb}}<br/>
+									Feeling <span class="textMood">{{mood}}</span> about the election
+									
+								</strong>
+							</p>
+						</div>
+
+						<div class="user_response">
+							<div class="bigQuote">“</div>
+							<div class="innerText"><p>{{text}}</p></div>
+						</div>
+
+					</div>
+
+					{{/if}}
+
+				{{/each}}
+
+			{{/each}}
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
