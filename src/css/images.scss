@@ -1,0 +1,170 @@
+@import "mq";
+
+.morwell_1_1 {
+
+	@include mq($until: mobile) { /*  320px */
+		background-image: url("<%= path %>/assets/morwell_1_1_320.jpg");
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) { /*  480px */
+		background-image: url("<%= path %>/assets/morwell_1_1_480.jpg");
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) { /*  740px */
+		background-image: url("<%= path %>/assets/morwell_1_1_740.jpg");
+	}
+
+	@include mq($from: tablet, $until: desktop) { /*  980px */
+		background-image: url("<%= path %>/assets/morwell_1_1_980.jpg");
+	}
+
+	@include mq($from: desktop, $until: wide) { /*  1300px */
+		background-image: url("<%= path %>/assets/morwell_1_1.jpg");
+	}
+
+	@include mq($from: wide) { /*  1300px and wider */
+		background-image: url("<%= path %>/assets/morwell_1_1.jpg");
+	}
+
+}
+
+.morwell_1_2 {
+
+	width: 100%;
+	height: 0px;
+	padding-bottom: 67%;
+
+	@include mq($until: mobile) { /*  320px */
+		background-image: url("<%= path %>/assets/morwell_1_2.jpg");
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) { /*  480px */
+		background-image: url("<%= path %>/assets/morwell_1_2.jpg");
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) { /*  740px */
+		background-image: url("<%= path %>/assets/morwell_1_2.jpg");
+	}
+
+	@include mq($from: tablet, $until: desktop) { /*  980px */
+		background-image: url("<%= path %>/assets/morwell_1_2.jpg");
+	}
+
+	@include mq($from: desktop, $until: wide) { /*  1300px */
+		background-image: url("<%= path %>/assets/morwell_1_2.jpg");
+	}
+
+	@include mq($from: wide) { /*  1300px and wider */
+		background-image: url("<%= path %>/assets/morwell_1_2.jpg");
+	}
+
+}
+
+.morwell_1_3 {
+
+	width: 100%;
+	height: 0px;
+	padding-bottom: 67%;
+
+	@include mq($until: mobile) { /*  320px */
+		background-image: url("<%= path %>/assets/morwell_1_3.jpg");
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) { /*  480px */
+		background-image: url("<%= path %>/assets/morwell_1_3.jpg");
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) { /*  740px */
+		background-image: url("<%= path %>/assets/morwell_1_3.jpg");
+	}
+
+	@include mq($from: tablet, $until: desktop) { /*  980px */
+		background-image: url("<%= path %>/assets/morwell_1_3.jpg");
+	}
+
+	@include mq($from: desktop, $until: wide) { /*  1300px */
+		background-image: url("<%= path %>/assets/morwell_1_3.jpg");
+	}
+
+	@include mq($from: wide) { /*  1300px and wider */
+		background-image: url("<%= path %>/assets/morwell_1_3.jpg");
+	}
+
+}
+
+.morwell_1_4 {
+
+	width: 100%;
+	height: 0px;
+	padding-bottom: 67%;
+
+	@include mq($until: mobile) { /*  320px */
+		background-image: url("<%= path %>/assets/morwell_1_4_320.jpg");
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) { /*  480px */
+		background-image: url("<%= path %>/assets/morwell_1_4_480.jpg");
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) { /*  740px */
+		background-image: url("<%= path %>/assets/morwell_1_4_720.jpg");
+	}
+
+	@include mq($from: tablet, $until: desktop) { /*  980px */
+		background-image: url("<%= path %>/assets/morwell_1_4.jpg");
+	}
+
+	@include mq($from: desktop, $until: wide) { /*  1300px */
+		background-image: url("<%= path %>/assets/morwell_1_4.jpg");
+	}
+
+	@include mq($from: wide) { /*  1300px and wider */
+		background-image: url("<%= path %>/assets/morwell_1_4.jpg");
+	}
+
+}
+
+.morwell_1_5 {
+
+	width: 100%;
+	height: 0px;
+	padding-bottom: 67%;
+
+	@include mq($until: mobile) { /*  320px */
+		background-image: url("<%= path %>/assets/morwell_1_5.jpg");
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) { /*  480px */
+		background-image: url("<%= path %>/assets/morwell_1_5.jpg");
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) { /*  740px */
+		background-image: url("<%= path %>/assets/morwell_1_5.jpg");
+	}
+
+	@include mq($from: tablet, $until: desktop) { /*  980px */
+		background-image: url("<%= path %>/assets/morwell_1_5.jpg");
+	}
+
+	@include mq($from: desktop, $until: wide) { /*  1300px */
+		background-image: url("<%= path %>/assets/morwell_1_5.jpg");
+	}
+
+	@include mq($from: wide) { /*  1300px and wider */
+		background-image: url("<%= path %>/assets/morwell_1_5.jpg");
+	}
+
+}
+
+.morwell_1_1, .morwell_1_2, .morwell_1_3, .morwell_1_4, .morwell_1_5 {
+	background-size: cover;
+	margin-bottom: 20px;
+}
+
+.morwell_1_1 {
+
+	@include mq($until: mobileLandscape) { /*  480px */
+		background-position: 40% bottom;
+	}
+
+}

@@ -83,24 +83,34 @@ aside, footer {
 
 .interactive-pullquote {
 	width: 100%;
-	max-width: 200px;
 	box-sizing: border-box;
 	padding: 0;
-	float: left;
-	margin-bottom: 0.75rem;
+	
 	padding: 10px;
 
-    @include mq($from: tablet, $until: desktop) {
-        display: none;
-    }
+	@include mq($until: tablet) {
+		margin-bottom: 20px;
+	}
 
+    @include mq($from: tablet, $until: desktop) {
+        margin-left: -220px;
+        float: left;
+        max-width: 200px;
+        margin-bottom: 0.75rem;
+    }
 
     @include mq($from: desktop, $until: leftCol) {
         margin-left: -220px;
+        float: left;
+        max-width: 200px;
+        margin-bottom: 0.75rem;
     }
 
     @include mq($from: leftCol) {
        margin-left: -250px;
+       float: left;
+       max-width: 200px;
+       margin-bottom: 0.75rem;
     }
 
 }
@@ -111,8 +121,8 @@ aside, footer {
 }
 
 .interactive-pullquote blockquote p {
-	font-size: 1.5rem;
-	line-height: 1.75rem;
+	font-size: 20px;
+	line-height: 24px;
 	font-family: "Guardian Egyptian Web", Georgia, serif;
 	font-weight: normal;
 	color: #767676;

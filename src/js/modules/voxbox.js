@@ -1,4 +1,4 @@
-import template from '../../templates/voxpop.html'
+import voxplate from '../../templates/voxpop.html'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
 import Ractive from 'ractive'
 import * as d3 from 'd3'
@@ -44,9 +44,9 @@ export class Voxbox {
 		var self = this
 
         this.ractive = new Ractive({
-            el: '#app',
+            el: '#vox_widget',
             data: {"responses":self.responses,"settings":self.settings},
-            template: template
+            template: voxplate
         })
 
         this.ractive.on('activate', (context, group, item) => {
