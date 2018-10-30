@@ -222,11 +222,18 @@
 	border-bottom: 5px solid #999;
 	border-left: 0;
 }
+
+
+
 .nav-episode-sidebar {
 	border-bottom: 1px solid #999;
 	border-left: 0;
 }
 .nav-episodes a, .nav-episodes a:link, .nav-episodes a:visited, .nav-episodes-sidebar a, .nav-episodes-sidebar a:link, .nav-episodes-sidebar a:visited {
+	color: white;
+}
+
+.nav-episode a:hover {
 	color: #666;
 }
 .gia-button {
@@ -368,6 +375,7 @@
     font-family: 'Guardian Text Sans Web', 'Agate Sans', 'Volkhov', Georgia;
     font-size: 14px;
     font-weight: bold;
+    margin-bottom: 20px;
 }
     
 
@@ -417,11 +425,11 @@
 	height: 0px;
 	
 	margin-bottom: 20px;
+	margin: auto;
 	background-color: lightgrey;
 
-
 	@include mq($from: mobile, $until: mobileLandscape) { /*  480px */
-		padding-bottom: 1%;
+		padding-bottom: 150%;
 	}
 
 	@include mq($from: mobileLandscape, $until: tablet) { /*  740px */
@@ -1144,7 +1152,7 @@
 	margin-bottom: 10px;
 	margin: auto;
 
-	@include mq($until: tablet) {
+	@include mq($until: desktop) {
 		background-color: #f6f6f6;
 	}
 
@@ -1153,7 +1161,7 @@
 .electorate__glancer_span {
 	width: 100%;
 
-	@include mq($until: tablet) {
+	@include mq($until: desktop) {
 		padding: 10px;
 	}
 
@@ -1161,7 +1169,8 @@
 
 .electorate__glancer_section {
 	box-sizing: border-box;
-	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-family: 'Guardian Text Sans Web', 'Volkhov', Georgia;
 	font-size: 14px;
 	
@@ -1206,11 +1215,40 @@ iframe {
 
 .electorater-interactive-full {
 	box-sizing: border-box;
-	width: 100%;
 	display: inline-block;
 	border-top: 2px solid #ed7f11;
 	border-bottom: 2px solid #ed7f11;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	padding: 20px;
+
+	@include mq($until: mobile) { /*  320px */
+		width: 100%;
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) { /*  480px */
+		width: 100%;
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) { /*  740px */
+		width: 80%;
+		padding: 10px;
+		margin-left: 10%;
+	}
+
+	@include mq($from: tablet, $until: desktop) { /*  980px */
+		width: 60%;
+		padding: 10px;
+		margin-left: 20%;
+	}
+
+	@include mq($from: desktop, $until: wide) { /*  1300px */
+		width: 100%;
+	}
+
+	@include mq($from: wide) { /*  1300px and wider */
+		width: 100%;
+	}
+
+
 
 }

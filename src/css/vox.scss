@@ -7,15 +7,11 @@
 	box-sizing: border-box;
 	padding: 10px;
 	margin: auto;
-	margin-top: 20px;
 	display: inline-block;
   position: relative;
   border-top: 2px solid #ed7f11;
 }
 
-#vox_widget h2 {
-	margin-top: 10px;
-}
 
 .headshot_block_container {
 	width: 100%;
@@ -355,17 +351,49 @@
 .voxpop_container {
 	
 	display: inline-block;
+  margin-top: 20px;
 
-	@include mq($until: tablet) {
-		width: 100%;
-		margin-left: 15px;
-	}
+  @include mq($until: mobile) { /*  320px */
+    width: 100%;
+    margin-left: 15px;
+    background-color: #f6f6f6;
+  }
 
-	@include mq($from: tablet) {
-		width: 40%;
-		margin-left: 10%;
-		padding-right: 40px;
-		float: left;
-	}
+  @include mq($from: mobile, $until: mobileLandscape) { /*  480px */
+    width: 100%;
+    margin-left: 15px;
+    background-color: #f6f6f6;
+  }
+
+  @include mq($from: mobileLandscape, $until: tablet) { /*  740px */
+    width: 90%;
+    margin-left: 10%;
+    background-color: #f6f6f6;
+  }
+
+  @include mq($from: tablet, $until: desktop) { /*  980px */
+    width: 60%;
+    box-sizing: border-box;
+    margin-left: 25%;
+    padding-right: 0px;
+    border-bottom: 2px solid #ed7f11;
+    padding: 10px;
+    background-color: #f6f6f6;
+  }
+
+  @include mq($from: desktop, $until: wide) { /*  1300px */
+    width: 40%;
+    margin-left: 10%;
+    padding-right: 40px;
+    float: left;
+  }
+
+  @include mq($from: wide) { /*  1300px and wider */
+    width: 40%;
+    margin-left: 10%;
+    padding-right: 40px;
+    float: left;
+  }
+
 
 }

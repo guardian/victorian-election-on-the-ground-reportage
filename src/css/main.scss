@@ -5,11 +5,32 @@
 @import "quote";
 @import "vox";
 @import "images";
+@import "social";
 
 
-// Uncomment for full screen (including immersive article main media)
 @import "fullscreen";
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+    position: relative;
+    
+}
+
+a:link {
+    color: #ed7f11;
+}
+
+/* visited link */
+a:visited {
+    color: #ed7f11;
+}
+
+/* mouse over link */
+a:hover {
+    color: #ed7f11;
+}
+
+/* selected link */
+a:active {
+    color: #ed7f11;
 }

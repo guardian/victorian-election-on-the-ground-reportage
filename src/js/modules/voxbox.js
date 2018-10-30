@@ -10,7 +10,7 @@ export class Voxbox {
 
 		var self = this
 
-
+		this.electorate = settings[0].electorate
 		this.settings = {"title": settings[0].title, "standfirst": settings[0].standfirst}
 		this.order = ['positive', 'indifferent', 'negative']
 
@@ -73,6 +73,8 @@ export class Voxbox {
 
         trigger.click();
 
+        this.social()
+
 	}
 
     sortByColumn(column, data) {
@@ -99,5 +101,53 @@ export class Voxbox {
 
 		return array;
     }
+
+    facebook() {
+
+		var pagelink = "https://www.theguardian.com/australia-news/ng-interactive/2018/oct/28/victorian-election-2018-on-the-ground-in-morwell-part-one"
+
+		var title = "Victorian election 2018: On the ground in " + self.electorate;
+
+		var params = {
+		  method: 'feed',
+		  name: title
+		};
+
+		console.log(params);
+		FB.ui(params, function(response) {});
+	}
+
+    twitter() {
+
+    	var self = this
+
+		var pagelink = "https://www.theguardian.com/australia-news/ng-interactive/2018/oct/28/victorian-election-2018-on-the-ground-in-morwell-part-one"
+
+		var message = "Victorian election 2018: On the ground in " + self.electorate;
+
+		var twitter_results = 'https://twitter.com/intent/tweet?url='+ encodeURIComponent(pagelink) + '&text=' + encodeURI(message);
+
+		window.open(twitter_results, '_blank');
+
+    }
+
+	social() {
+
+		var self = this
+
+		var share_buttons = document.getElementsByClassName("interactive-share");
+
+		for (var i = 0; i < share_buttons.length; i++) {
+
+		    share_buttons[i].addEventListener('click', function() {
+
+		    	self[this.getAttribute('data-network')]()
+
+		    }, false);
+
+		}
+
+	}
+
 
 }

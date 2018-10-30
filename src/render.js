@@ -1,4 +1,4 @@
-import templateHTML from "./src/templates/morwell-1.html!text"
+import templateHTML from "./src/templates/brunswick-1.html!text"
 
 export async function render() {
     // this function just has to return a string of HTML
