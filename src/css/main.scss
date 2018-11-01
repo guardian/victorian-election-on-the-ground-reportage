@@ -6,6 +6,7 @@
 @import "vox";
 @import "images";
 @import "social";
+@import "pointer";
 
 
 @import "fullscreen";
@@ -14,6 +15,15 @@
     margin: 0 !important;
     position: relative;
     
+}
+
+#victorin-election-nav {
+	width: 100%;
+
+	@include mq($from: tablet) {
+		height: 85px;
+	}
+
 }
 
 a:link {

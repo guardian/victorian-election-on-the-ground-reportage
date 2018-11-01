@@ -1,4 +1,5 @@
 import voxplate from '../../templates/voxpop.html'
+import navplate from '../../templates/nav.html'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
 import Ractive from 'ractive'
 import * as d3 from 'd3'
@@ -6,20 +7,58 @@ Ractive.DEBUG = false;
 
 export class Voxbox {
 
-	constructor(data,settings) {
+	constructor(data, settings, isApp, part) {
 
 		var self = this
 
 		this.electorate = settings[0].electorate
 		this.settings = {"title": settings[0].title, "standfirst": settings[0].standfirst}
 		this.order = ['positive', 'indifferent', 'negative']
+		this.sharelink = settings[0]["part"+part]
+		this.part = part
+
+		this.database = {
+			part1: settings[0].part1,
+			status1: (settings[0].part1==='FALSE') ? false : true,
+			title1: settings[0].title1,
+			part2: settings[0].part2,
+			status2: (settings[0].part2==='FALSE') ? false : true,
+			title2: settings[0].title2,
+			part3: settings[0].part3,
+			status3: (settings[0].part3==='FALSE') ? false : true,
+			title3: settings[0].title3,
+			tipster: function(key) {
+        
+                return (part==key) ? " selected" : ""
+
+            }
+		}
+
+		if (isApp) {
+			self.appstuff()
+		} else {
+			self.generic(data)
+		}
+		
+	}
+
+	appstuff() {
+
+		iframeMessenger.enableAutoResize();
+
+		this.navigation()
+
+	}
+
+	generic(data) {
+
+		var self = this
 
 		this.responses = {
 
 			months : self.sortByColumn('date', data)
 
 		}
-
 
 		for (var i = 0; i < this.responses.months.length; i++) {
 
@@ -36,7 +75,7 @@ export class Voxbox {
 		}
 
 		this.ractivate()
-		
+
 	}
 
 	ractivate() {
@@ -73,6 +112,20 @@ export class Voxbox {
 
         trigger.click();
 
+        this.navigation()
+
+	}
+
+	navigation() {
+
+		var self = this
+
+        var nav = new Ractive({
+            el: '#victorin-election-nav',
+            data: self.database,
+            template: navplate
+        })
+
         this.social()
 
 	}
@@ -104,16 +157,15 @@ export class Voxbox {
 
     facebook() {
 
-		var pagelink = "https://www.theguardian.com/australia-news/ng-interactive/2018/oct/28/victorian-election-2018-on-the-ground-in-morwell-part-one"
+    	var self = this
 
-		var title = "Victorian election 2018: On the ground in " + self.electorate;
+		var title = "Victorian election 2018: On the ground in " + self.electorate + " - part " + self.part;
 
 		var params = {
 		  method: 'feed',
 		  name: title
 		};
 
-		console.log(params);
 		FB.ui(params, function(response) {});
 	}
 
@@ -121,11 +173,9 @@ export class Voxbox {
 
     	var self = this
 
-		var pagelink = "https://www.theguardian.com/australia-news/ng-interactive/2018/oct/28/victorian-election-2018-on-the-ground-in-morwell-part-one"
+		var message = "Victorian election 2018: On the ground in " + self.electorate + " - part " + self.part;
 
-		var message = "Victorian election 2018: On the ground in " + self.electorate;
-
-		var twitter_results = 'https://twitter.com/intent/tweet?url='+ encodeURIComponent(pagelink) + '&text=' + encodeURI(message);
+		var twitter_results = 'https://twitter.com/intent/tweet?url='+ encodeURIComponent(self.sharelink) + '&text=' + encodeURI(message);
 
 		window.open(twitter_results, '_blank');
 
@@ -148,6 +198,5 @@ export class Voxbox {
 		}
 
 	}
-
 
 }

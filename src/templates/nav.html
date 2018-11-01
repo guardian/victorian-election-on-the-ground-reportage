@@ -1,0 +1,48 @@
+<div>
+
+	{{#if status1}}<a href="{{part1}}">
+	<div class="nav-episode available{{tipster(1)}}">
+		<div class="nav-episode-header">
+			<span class="nav-episode-number">Part 1</span> <span class="nav-episode-title">{{title1}}</span>
+		</div>
+	</div>
+	</a>
+	{{else}}
+	<div class="nav-episode available{{tipster(1)}}">
+		<div class="nav-episode-header">
+			<span class="nav-episode-number">Part 1</span> <span class="nav-episode-title">{{title1}}</span>
+		</div>
+	</div>
+	{{/if}} 
+
+	{{#if status2}}<a href="{{part2}}">
+	<div class="nav-episode available{{tipster(2)}}">
+		<div class="nav-episode-header">
+			<span class="nav-episode-number">Part 2</span> <span class="nav-episode-title">{{title2}}</span>
+		</div>
+	</div>
+	</a>
+	{{else}}
+	<div class="nav-episode available{{tipster(2)}}">
+		<div class="nav-episode-header">
+			<span class="nav-episode-number">Part 2</span> <span class="nav-episode-title">{{title2}}</span>
+		</div>
+	</div>
+	{{/if}} 
+
+	{{#if status3}}<a href="{{part3}}">
+	<div class="nav-episode available{{tipster(3)}}">
+		<div class="nav-episode-header">
+			<span class="nav-episode-number">Part 3</span> <span class="nav-episode-title">{{title3}}</span>
+		</div>
+	</div>
+	</a>
+	{{else}}
+	<div class="nav-episode available{{tipster(3)}}">
+		<div class="nav-episode-header">
+			<span class="nav-episode-number">Part 3</span> <span class="nav-episode-title">{{title3}}</span>
+		</div>
+	</div>
+	{{/if}} 
+
+</div>
